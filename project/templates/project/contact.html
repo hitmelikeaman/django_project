@@ -1,0 +1,40 @@
+{% extends 'project/base.html' %}
+
+{% block content %}
+
+<div class="containerinfo">
+    <h1 class="contactheader"><i class="icon ion-android-contacts"></i> О нас:</h1>
+
+    <div class="description">
+        <p>Если Вам понравился урок или наоборот, чем-то Вас не устроил, Вы всегда можете оставить нам свой отзыв или связаться с нами любым способом. Мы всегда рады вашим комментариям и предложениям! Ждем Ваши заявки и письма по контактам ниже!</p>
+    </div>
+    <div class="contact">
+
+        <div class="contactinfo">
+            <h3>Связаться с нами:</h3>
+            <ul>
+                <li class="contactlist">
+                    <p><i class="icon ion-ios-telephone"></i>+7(987)746-47-93</p>
+                </li>
+                <li class="contactlist">
+
+                    <p><i class="icon ion-ios-location"></i>17, Московское шоссе, Н.Новгород</p>
+                </li>
+                <li class="contactlist">
+                    <p><i class="icon ion-social-skype"></i>hitmelikeamen</p>
+                </li>
+                <li class="contactlist">
+                    <p><i class="icon ion-ios-email"></i>dnaumova1997@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+
+        <form class="form_contact" action="." method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <button type="submit"> Отправить!</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}

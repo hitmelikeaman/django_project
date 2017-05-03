@@ -1,0 +1,63 @@
+{% extends 'project/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<section class="bodycontent">
+        <div class="content">
+            <h1>Начни изучение web-разработки с MAGICCODING!</h1>
+            <p>Интересные курсы. Обучение шаг за шагом. Возможность редактирования кода на сайте.</p>
+            <p>Это все о MAGICCODING!</p>
+            <div class="go"><a href="{% url 'contact' %}">Спроси!</a></div>
+        </div>
+    </section>
+
+    <div class="lightbox-gallery">
+        <div class="container3">
+            <ul>
+                <li class="gallery">
+                    <img src="{% static 'her/img/step1.jpg' %}">
+                    <h2><div class="go"><a href="{% url 'lessons' %}">Шаг 1: HTML</a></div></h2>
+                    <p class="p-container">HTML - это основа твоего сайта. </p>
+                </li>
+                <li class="gallery">
+                    <img src="{% static 'her/img/step2.jpg' %}">
+                    <h2><div class="go"><a href="{% url 'lessons' %}">Шаг 2: CSS</a></div></h2>
+                    <p class="p-container">CSS может координально изменить дизайн сайта!</p>
+                </li>
+                <li class="gallery">
+                    <img src="{% static 'her/img/step3.jpg' %}">
+                    <h2><div class="go"><a href="{% url 'lessons' %}">Шаг 3: JS</a></div></h2>
+                    <p class="p-container">JavaScript воплотит твою идею в реальность!</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quote">
+<div class="content">
+                <p>Если тебе очень сложно определиться с выбором курса, наш сайт с удовольствием тебе поможет! Мы подберем тебе курс в зависимости от твоих знаний и умений.
+                    <div class="go"><a href="{% url 'choose' %}">Выбрать!</a></div></p>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="container">
+            <ul>
+                <li>
+                    <i class="icon ion-document-text"></i>
+                    <h2>Это легко</h2>
+                    <p class="p-container">Благодаря встроенному редактору codepen ты сможешь изменить любой код из урока.</p>
+                </li>
+                <li>
+                    <i class="icon ion-heart"></i>
+                    <h2>Это интересно</h2>
+                    <p class="p-container">Ты сможешь научиться необычным вещам, которые помогут преобразить твой веб-сайт! </p>
+                </li>
+                <li>
+                    <i class="icon ion-connection-bars"></i>
+                    <h2>Это полезно</h2>
+                    <p class="p-container">Знания, полученные в процессе обучения, ты легко сможешь применить в будущем.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

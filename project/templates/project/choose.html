@@ -1,0 +1,74 @@
+{% extends 'project/base.html' %} {% block content %}
+<div class="container">
+    <div class="white-container">
+        <div class="lists">
+            <h1>Подбор курса:</h1>
+            <p>Выберете утверждение, которое характеризует Вас:</p>
+            <form action="{% url 'choose' %}" method="POST">{% csrf_token %}
+                <section class="content2">
+                    <ul class="list">
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="0" name="0" />
+                            <label for="0" class="label--checkbox">Простота</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="1" name="1" />
+                            <label for="1" class="label--checkbox">Возможность работать с цветами и шрифтами</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="2" name="2" />
+                            <label for="2" class="label--checkbox">Создавать незамысловатый дизайн</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="3" name="3" />
+                            <label for="3" class="label--checkbox">Научиться делать анимации</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="4" name="4" />
+                            <label for="4" class="label--checkbox">Изучить работу с таблицами</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="5" name="5" />
+                            <label for="5" class="label--checkbox">Изучить работу со списками</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="6" name="6" />
+                            <label for="6" class="label--checkbox">Создавать простые формы</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="7" name="7" />
+                            <label for="7" class="label--checkbox">Научиться работать с переменными и данными</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="8" name="8" />
+                            <label for="8" class="label--checkbox">Изучить работу с JSON</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="9" name="9" />
+                            <label for="9" class="label--checkbox">Научиться работать с flexbox </label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="10" name="10" />
+                            <label for="10" class="label--checkbox">Создавать ссылки на другие страницы</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="11" name="11" />
+                            <label for="11" class="label--checkbox">Разобраться в работе и структуре веб-страниц</label>
+                        </li>
+                        <li class="list__item">
+                            <input type="checkbox" class="checkbox" id="12" name="12" />
+                            <label for="12" class="label--checkbox">Добавление “движений” на веб-страницы</label>
+                        </li>
+
+                    </ul>
+                </section>
+                <div class="search">
+                    <div class="content">
+                        <div class="go"><button type="submit" name="action"> Поиск!</button></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+    {% endblock %}

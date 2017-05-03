@@ -1,0 +1,17 @@
+{% extends 'project/base.html' %} {% block content %}
+<div class="container">
+    <div class="content">
+    <div class="result_page">
+        <h1>Согласно выбранным пунктам Вам интересно:</h1>
+            {% for cat in dcs_cat %}
+            <p>
+                {{ forloop.counter }}. {{ cat.1 }}
+            </p>
+            {% endfor %}
+            <p>Не забывайте изучать все разделы, так как каждый из них очень важен для создания веб-сайта.</p>
+            <div class="size_go"><div class="go"><a href="{% url 'contact' %}">Все курсы</a></div></div>
+</div>
+
+</div>
+</div>
+{% endblock %}

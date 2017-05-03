@@ -1,0 +1,90 @@
+{% extends 'project/base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div class="maingallery">
+        <div class="containergallery">
+            <h1><i class="icon ion-paintbrush"></i> Наши курсы:</h1>
+            <div class="block">
+                <h2>HTML</h2>
+                <p>HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») — стандартизированный язык разметки документов во Всемирной паутине. Большинство веб-страниц содержат описание разметки на языке HTML (или XHTML). Язык HTML интерпретируется браузерами; полученный в результате интерпретации форматированный текст отображается на экране монитора компьютера или мобильного устройства.</p>
+                <div class="grid">
+                    <ul>
+                        {% for post in posts %}
+                            {% if post.category.title == 'HTML' %}
+                                <li> <a href="{% url 'tuitor' pk=post.pk %}">
+                                    <figure class="effect-zoe">
+                                         <img src="{{ post.img.url }}">
+                                        <figcaption>
+                                            <h2>{{ post.title }}</h2>
+
+                                            <p class="description">{{ post.description }}</p>
+                                            
+                                        </figcaption>
+                                    </figure>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+
+                    </ul>
+                </div>
+            </div>
+            <div class="block">
+                <h2>CSS</h2>
+                <p>Cascading Style Sheets — каскадные таблицы стилей) — формальный язык описания внешнего вида документа, написанного с использованием языка разметки.</p>
+                <p>CSS используется создателями веб-страниц для задания цветов, шрифтов, расположения отдельных блоков и других аспектов представления внешнего вида этих веб-страниц.</p>
+                <div class="grid">
+                <ul>
+                    {% for post in posts %}
+                        {% if post.category.title == 'CSS' %}
+                            <li> <a href="{% url 'tuitor' pk=post.pk %}">
+                                <figure class="effect-zoe">
+                                     <img src="{{ post.img.url }}">
+                                    <figcaption>
+                                        <h2>{{ post.title }}</h2>
+                                        <p class="icon-links">
+                                            <i class="icon ion-thumbsup"></i>
+                                            <i class="icon ion-heart"></i>
+                                            <i class="icon ion-social-html5-outline"></i>
+                                        </p>
+                                        <p class="description">{{ post.description }}</p>
+                                    </figcaption>
+                                </figure>
+                                </a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+            <div class="block1">
+            <div class="grid">
+                <h2>JavaScript</h2>
+                <p>JavaScript — прототипно-ориентированный сценарный язык программирования. </p>
+                    <p>JavaScript обычно используется как встраиваемый язык для программного доступа к объектам приложений. Наиболее широкое применение находит в браузерах как язык сценариев для придания интерактивности веб-страницам.</p>
+                    <ul>
+                        {% for post in posts %}
+                            {% if post.category.title == 'JAVASCRIPT' %}
+                                <li> <a href="{% url 'tuitor' pk=post.pk %}">
+                                    <figure class="effect-zoe">
+                                         <img src="{{ post.img.url }}">
+                                        <figcaption>
+                                            <h2>{{ post.title }}</h2>
+                                            <p class="icon-links">
+                                                <i class="icon ion-thumbsup"></i>
+                                                <i class="icon ion-heart"></i>
+                                                <i class="icon ion-social-html5-outline"></i>
+                                            </p>
+                                            <p class="description">{{ post.description }}</p>
+                                        </figcaption>
+                                    </figure>
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'project/base.html' %}
+
+  {% block content %}
+    <div class="container">
+        <div class="white-container">
+            <div class="tuitor">
+
+                <h1>{{ post.title }}</h1>
+                {% if post.published_date %}
+                <h2>{{ post.published_date }}</h2>
+                {% endif %}
+                <p>{% autoescape off %}{{ post.text|linebreaksbr }}{% endautoescape %}</p>
+
+                <div class="thanks">
+
+                    <div class="content">
+                        <div class="go"><a href="{% url 'contact' %}">Написать</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  {% endblock %}

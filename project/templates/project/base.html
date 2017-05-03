@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Roboto" rel="stylesheet">
+    <title>Project</title>
+</head>
+
+<body>
+    <header>
+        <a href="{% url 'index' %}" class="logo">
+            <img src="{% static 'her/img/logo.png' %}">
+        </a>
+        <h1></h1>
+        <nav class="go">
+            <ul>
+                <li><a class="selected" href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'lessons' %}">Все курсы</a></li>
+                <li><a href="{% url 'choose' %}">Подбор</a></li>
+                <li><a href="{% url 'contact' %}">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+    <footer>
+        <div class="secondpart">
+            <div class="container2">
+                <p>&copy2016 Dasha Naumova</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
