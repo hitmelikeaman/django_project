@@ -5,7 +5,7 @@ from .forms import ContactForm
 from django.http import HttpResponse
 from django.core.mail import send_mail, BadHeaderError
 from .utilities import parse_for_checked, apply_priorities, form_result
-
+from django.conf import settings
 
 def contact(request):
     if request.method == 'POST':
@@ -15,7 +15,7 @@ def contact(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(you, message, from_email, ['dnaumova1997@gmail.com'])
+                send_mail(you, message, settings.EMAIL_HOST_USER, ['dnaumova1997@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
